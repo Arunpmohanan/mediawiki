@@ -2,14 +2,14 @@
 
 This Repository contains 
 
-Dockerfiles : mediawiki 1.37.2 with redhat base image  8  and mariadb 
+Dockerfiles : mediawiki 1.37.2 with redhat base image  8  and mariadb:10.4
 
 K8s service file for the above deplyments 
 
 Helm configuration for the above deployments 
 
 
-The images created by the DOcker files are pushed to the registry docker.io/arunpmohanandocker/learn01
+The images created by the Docker files are pushed to the registry docker.io/arunpmohanandocker/learn01
 and used in the deployments files for k8s
 
 
@@ -17,9 +17,9 @@ Steps to run
 
 Install minikube 
 
-minikube start 
-
 clone the git repo https://github.com/Arunpmohanan/mediawiki.git
+
+minikube start 
 
 kubectl apply -f  /mediawiki/k8s/ 
 
