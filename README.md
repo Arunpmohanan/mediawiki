@@ -4,10 +4,9 @@ This Repository contains
 
 Dockerfiles : mediawiki 1.37.2 with redhat base image  8  and mariadb:10.4
 
-K8s service file for the above deplyments 
+K8s Deployments files and service file for the above images
 
 Helm configuration for the above deployments 
-
 
 The images created by the Docker files are pushed to the registry docker.io/arunpmohanandocker/learn01
 and used in the deployments files for k8s
