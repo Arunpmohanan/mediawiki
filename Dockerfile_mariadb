@@ -1,0 +1,22 @@
+FROM mariadb:10.4
+#FROM registry.access.redhat.com/ubi8
+
+#RUN  yum --disableplugin=subscription-manager -y  install systemd net-tools wget \
+#     && yum --disableplugin=subscription-manager -y clean all
+
+#RUN wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup  \
+#   && chmod +x mariadb_repo_setup \
+#   && ./mariadb_repo_setup  \
+#   &&  yum --disableplugin=subscription-manager -y  install perl-DBI libaio lsof libssl.so.10\
+#   &&  yum --disableplugin=subscription-manager -y  install --repo="mariadb-main" --disablerepo=AppStream MariaDB-server \
+#   && yum --disableplugin=subscription-manager -y clean all
+
+EXPOSE 3306
+
+LABEL version="1.0"
+LABEL description="MariaDB Server"
+
+HEALTHCHECK --start-period=5m \
+  CMD mariadb -e 'SELECT @@datadir;' || exit 1
+
+CMD ["mysqld"]

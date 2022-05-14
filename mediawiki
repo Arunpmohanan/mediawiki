@@ -1,0 +1,3 @@
+FROM redhat/ubi8:latest
+USER root
+ADD my-program/ .

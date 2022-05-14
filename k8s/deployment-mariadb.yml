@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb-deploy
+spec:
+  selector:
+    matchLabels:
+      run: mariadb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: mariadb
+    spec:
+      containers:
+      - name: mariadb01
+        image: docker.io/arunpmohanandocker/learn01:mariadb
+        ports:
+        - containerPort: 3306
+          name: http-db-svc
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "mypass"
+  
