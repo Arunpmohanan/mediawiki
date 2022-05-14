@@ -2,15 +2,12 @@
 
 This Repository contains 
 
-Dockerfiles : mediawiki 1.37.2 with redhat base image  8 
-               mariadb 
-
-
-K8s Deployment files for media wiki image and mariadb image created with above Docker files  
+Dockerfiles : mediawiki 1.37.2 with redhat base image  8  and mariadb 
 
 K8s service file for the above deplyments 
 
 Helm configuration for the above deployments 
+
 
 The images created by the DOcker files are pushed to the registry docker.io/arunpmohanandocker/learn01
 and used in the deployments files for k8s
